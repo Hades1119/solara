@@ -37,9 +37,15 @@
   }
 }
 
+body {
+  width: 100%;
+}
+
 header {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  padding: 10px 15px;
 }
 
 ul {
@@ -47,8 +53,95 @@ ul {
   flex-direction: row;
   gap: 10px;
   list-style-type: none;
+  flex: auto;
 }
 
+img {
+  flex-grow: 0;
+  flex-shrink: 1;
+  max-width: 35%;
+}
 
+.nav-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bar {
+  background-color: #000000;
+  height: 3px;
+  width: 30px;
+  transition: transform 2s, opacity 1s;
+}
+
+.bar:nth-child(2) {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* Active state for the X */
+.nav-toggle.active .bar:nth-child(1) {
+  transform: rotate(405deg) translate(9px, 0px);
+}
+
+.nav-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.active .bar:nth-child(3) {
+  transform: rotate(-405deg) translate(11px, -2px);
+}
+
+.heroSection {
+  width: 100%;
+  height: 60vh;
+  background: url(../public/images/skys.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+  color: white;
+  padding: 20px;
+
+  display: flex;
+  border: 2px solid red;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha (fourth) value for the overlay opacity */
+  border: 2px solid purple;
+}
+
+.no-overlay {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border: 2px solid green;
+  gap: 30px;
+}
+
+.no-overlay button {
+  width: fit-content;
+  padding: 10px 25px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background-color: #3858e9;
+  align-self: center;
+}
 
 

@@ -3,8 +3,13 @@ import './App.css';
 function Header() {
     return (
         <header>
-            <img src='./icons8-sun.svg'></img>
-            <nav>
+            <img src='images/asset1.svg' alt='logo'/>
+            <button class="nav-toggle" id="navToggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            {/* <nav>
                 <ul>
                     <li>Home</li>
                     <li>Solutions</li>
@@ -12,7 +17,7 @@ function Header() {
                     <li>About Us</li>
                     <li>Contact</li>
                 </ul>
-            </nav>
+            </nav> */}
         </header>
     );
 }
